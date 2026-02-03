@@ -1,6 +1,25 @@
 // show databases
 
-use('aula')
+use('Bosch')
+
+db.people.insertMany([
+    {
+        name: "Donathan",
+        lastName: "Gonçalves",
+        salary: 0
+    },
+    {
+        name: "Patrick",
+        lastName: "Henrique",
+        salary: 2272
+    },
+    {
+        name: "Cristian",
+        lastName: "Cardoso",
+        salary: 2272
+    }]
+)
+
 const pessoinhas = [
     {
         name: "Cézar",
@@ -22,14 +41,14 @@ let pessoa =  {
 }
 db.people.insertOne(pessoa)
 
-// db.people.insertOne(
-//     {
-//         name: "Rebeca",
-//         lastName: "Ianz",
-//         salary: 2172
-//     }
+db.people.insertOne(
+    {
+        name: "Rebeca",
+        lastName: "Ianz",
+        salary: 2172
+    }
 
-// )
+)
 
 db.people.insertMany([
     {
