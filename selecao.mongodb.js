@@ -10,4 +10,4 @@ db.people.find({ salary: {$gte: 2200}})
 
 db.people.find({salary: { $gte: 2200}}, {name: 1, salary: 1})
 
-db.people.find({ cargo: "Aprendiz"})
+db.people.find()

@@ -5,7 +5,11 @@ use("Bosch")
 //     { $set: { name: "Cristian Mudado"}}
 // )
 
-db.people.updateMany(
-    {salary : 2172},
-    { $set: { cargo: "Aprendiz"}}
-)
+// db.people.updateMany(
+//     {salary : 2172},
+//     { $set: { cargo: "Aprendiz"}}
+// )
+
+db.people.deleteOne({
+    _id: ObjectId('6981f4b934c1b364eb73fa06')
+})
