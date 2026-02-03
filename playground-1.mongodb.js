@@ -62,3 +62,4 @@ db.people.insertMany([
         salary: 2172
     }]
 )
+
