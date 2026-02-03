@@ -1,3 +1,3 @@
 use("Bosch")
 
-db.people.find()
+db.people.find({ name: /^R/})
