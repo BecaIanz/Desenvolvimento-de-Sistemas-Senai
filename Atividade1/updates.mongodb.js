@@ -9,3 +9,8 @@ db.contatos.updateOne(
     {nome : "Amanda Souza"},
     { $set: { cidade: "São Paulo"}}
 )
+
+db.contatos.updateMany(
+    {telefone : /^41/},
+    { $set: { cidade: "Curitiba"}}
+)
