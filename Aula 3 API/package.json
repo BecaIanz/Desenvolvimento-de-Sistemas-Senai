@@ -5,10 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start" : "node teste.js",
-    "comitar" : "git add . && git commit -m "
+    "comitar" : "git add . && git commit -m"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "type" : "module"
 }
