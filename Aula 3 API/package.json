@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node teste.js",
-    "comitar": "git add . && git commit -m"
+    "comitar": "git add . && git commit -m",
+    "dev": "npx tsx watch src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +18,9 @@
     "@types/node": "^25.2.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1"
   }
 }
