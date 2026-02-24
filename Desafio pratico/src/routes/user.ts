@@ -73,6 +73,8 @@ router
         {user.tipo = tipo}
         if(ativo)
         {user.ativo = ativo}
+
+        res.status(200).send({response: `Usuário ${id} atualizado`})
     
 
     })
@@ -84,7 +86,6 @@ router
             users.splice(convertId - 1, 1)
         }
         res.status(200).send({response: `Deletando usuario ${id}`})
-        // splice
     })
 
 export default router
