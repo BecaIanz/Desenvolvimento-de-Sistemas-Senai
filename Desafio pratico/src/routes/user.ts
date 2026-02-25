@@ -45,6 +45,11 @@ router
         let convertId = Number(id)
         const {nome, email, tipo, ativo} = req.body
         const user = users.find((u) => u.id == convertId)
+
+        const emailExiste = users.find((u) => u.email == email)
+        if(emailExiste)
+        {return res.status(500).send({ response : "O email ja esta cadastrado em outro usuario"})}
+
         if(user){
             user.nome = nome
             user.email = email
