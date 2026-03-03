@@ -12,8 +12,8 @@ class ProductController {
     }
     static async getProductbyName (req: Request, res: Response){
         const {name} = req.params
-        const products = await Product.find(name, )
-        return res.status(200).send({response: products})
+        const product = await Product.find({name: name})
+        return res.status(200).send({response: product})
     }
 }
 
