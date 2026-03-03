@@ -10,8 +10,9 @@ class ProductController {
         return res.status(200).send({response: `Produto ${name} cadastrado`})
 
     }
-    static async getProduct (req: Request, res: Response){
-        const products = await Product.find()
+    static async getProductbyName (req: Request, res: Response){
+        const {name} = req.params
+        const products = await Product.find(name, )
         return res.status(200).send({response: products})
     }
 }
