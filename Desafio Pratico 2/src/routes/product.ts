@@ -5,6 +5,6 @@ const router: Router = express.Router()
 
 router
     .post('/cadastro', validateRegister,  PersonController.newProduct)
-    .get('/produtos/:name',  PersonController.getProduct)
+    .get('/produtos/:name',  PersonController.getProductbyName)
 
 export default router
