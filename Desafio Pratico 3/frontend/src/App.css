@@ -1,0 +1,7 @@
+.card{
+  width: 150px;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgb(230, 224, 154);
+}
