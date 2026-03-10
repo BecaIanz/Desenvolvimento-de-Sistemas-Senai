@@ -18,15 +18,17 @@ function App() {
 
   return (
     <>
+    <div className='container-card'>
       {products.map((product: any) => (
         <div key={product.id}>
           <div className='card'>
             <p>Produto: {product.name}</p>
-            Descrição: {product.description}
-            Categoria: {product.category}
+            <p>Descrição: {product.description}</p>
+            <p>Categoria: {product.category}</p>
           </div>
         </div>
       ))}
+    </div>
     </>
   )
 }
