@@ -10,6 +10,7 @@ function App() {
   const [category, setCategory] = useState("")
   const [stock, setStock] = useState(0)
   const [price, setPrice] = useState(0)
+  const [update, setUpdate] = useState(false)
 
   const fetchData = async () => {
     const response = await axios.get("http://localhost:8080/api/products/find")
@@ -20,6 +21,60 @@ function App() {
   const createProduct = async () => {
     try {
       await axios.post("http://localhost:8080/api/products/create", {
+        name,
+        description,
+        category,
+        stock,
+        price
+      })
+
+      fetchData()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const deleteProduct = async (id: string) => {
+    try {
+      await axios.delete(`http://localhost:8080/api/products/remove/${id}`)
+
+      fetchData()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const updateProduct = async (id: string) => {
+
+    <div className='card'>
+        <div className='container-input'>
+          <p>Nome: </p>
+          <input className='input' onChange={(e) => setName(e.target.value)}></input>
+        </div>
+        
+        <div className='container-input'>
+          <p>Descrição: </p>
+          <input className='input' onChange={(e) => setDescription(e.target.value)}></input>
+        </div>
+        
+        <div className='container-input'>
+          <p>Categoria</p>
+          <input className='input' onChange={(e) => setCategory(e.target.value)}></input>
+        </div>
+        
+        <div className='container-input'>
+          <p>Estoque</p>
+          <input className='input' type='number' onChange={(e) => setStock(Number(e.target.value))}></input>
+        </div>
+        
+        <div className='container-input'>
+          <p>Preço</p>
+          <input className='input' type='number' onChange={(e) => setPrice(Number(e.target.value))}></input>
+        </div>
+      </div>
+
+    try {
+      await axios.put(`http://localhost:8080/api/products/update/${id}`, {
         name,
         description,
         category,
@@ -77,6 +132,9 @@ function App() {
               <p>Descrição: {product.description}</p>
               <p>Categoria: {product.category}</p>
               <p>Quantidade em Estoque: {product.stock}</p>
+              <p>Preço: R${product.price}</p>
+              <button className='delete-button' onClick={() => deleteProduct(product._id)}>Deletar</button>
+              <button className='update-button' onClick={() => updateProduct(product._id)}>Editar</button>
             </div>
           </div>
         ))}

@@ -1,5 +1,5 @@
 .card{
-  width: 200px;
+  width: fit-content;
   height: fit-content;
   padding: 5px;
   border-radius: 10px;
@@ -35,6 +35,22 @@
   justify-content: start;
   gap: 20px;
 
+}
+
+.delete-button{
+  background-color: rgb(255, 73, 73);
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  padding: 1px;
+}
+
+.update-button{
+  background-color: rgb(73, 213, 255);
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  padding: 1px;
 }
 
 #root {
