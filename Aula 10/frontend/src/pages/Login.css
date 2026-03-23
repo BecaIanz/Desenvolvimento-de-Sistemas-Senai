@@ -1,0 +1,28 @@
+.box-login{
+    position: fixed;
+    width: 40rem;
+    height: 40rem;
+    background-color: rgb(221, 205, 151);
+    border-radius: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+
+    .input{
+        width: 80%;
+        height: 1.5rem;
+        background-color: rgb(224, 218, 199);
+        border: 1px solid rgb(170, 151, 115);
+    }
+    .box-input{
+        width: 100%;
+    }
+}
