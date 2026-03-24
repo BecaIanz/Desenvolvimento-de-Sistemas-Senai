@@ -21,8 +21,8 @@ export const RegisterUser = () => {
             })
             navigate("/login")
         
-        } catch (error: any) {
-            alert(error.message)
+        } catch (error) {
+            alert(error)
         }
     }
 
