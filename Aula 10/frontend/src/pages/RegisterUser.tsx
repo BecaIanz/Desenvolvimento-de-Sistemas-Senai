@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import './Login.css'
+import Swal from 'sweetalert2';
 
 export const RegisterUser = () => {  
     const [name, setName] = useState("")
@@ -19,10 +20,19 @@ export const RegisterUser = () => {
                 email,
                 password
             })
+            Swal.fire({
+                title: "Sucess",
+                text: "usuario registrado",
+                icon: 'success'
+            })
             navigate("/login")
         
         } catch (error) {
-            alert(error)
+            Swal.fire({
+                title: "Error",
+                text: "Não foi possivel registrar o usuario",
+                icon: 'error'
+            })
         }
     }
 

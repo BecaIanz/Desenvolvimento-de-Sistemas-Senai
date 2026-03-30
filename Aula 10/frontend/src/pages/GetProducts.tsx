@@ -33,13 +33,13 @@ export const GetProducts = () => {
                 {products.map((product: any) => (
                     <div key={product.id}>
                     <div className='card'>
-                    <p>Produto: {product.name}</p>
-                    <p>Descrição: {product.description}</p>
-                    <p>Categoria: {product.category}</p>
-                    <p>Quantidade em Estoque: {product.stock}</p>
-                    <p>Preço: R${product.price}</p>
-                    <button className='delete-button' onClick={() => deleteProduct(product._id)}>Deletar</button>
-                    <button className='update-button' onClick={() => navigate(`/update/${product._id}`)}>Editar</button>
+                        <p>Produto: {product.name}</p>
+                        <p>Descrição: {product.description}</p>
+                        <p>Categoria: {product.category}</p>
+                        <p>Quantidade em Estoque: {product.stock}</p>
+                        <p>Preço: R${product.price}</p>
+                        <button className='delete-button' onClick={() => deleteProduct(product._id)}>Deletar</button>
+                        <button className='update-button' onClick={() => navigate(`/update/${product._id}`)}>Editar</button>
                     </div>
                 </div>
                 ))}

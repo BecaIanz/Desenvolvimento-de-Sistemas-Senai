@@ -2,12 +2,14 @@
   width: fit-content;
   height: fit-content;
   padding: 5px;
+  gap: 50px;
   border-radius: 10px;
   background-color: rgb(221, 205, 151);
 }
 .container-card{
   width: 80em;
   height: fit-content;
+  margin: 1rem;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -46,10 +48,11 @@
 }
 
 .update-button{
-  background-color: rgb(73, 213, 255);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   width: fit-content;
   height: fit-content;
+  justify-content: end;
   padding: 1px;
 }
 

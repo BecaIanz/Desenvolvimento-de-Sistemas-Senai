@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import './Login.css'
+import Swal from 'sweetalert2';
 
 export const Login = () => {  
     const [email, setEmail] = useState("")
@@ -12,14 +13,24 @@ export const Login = () => {
 
     const login = async () => {
         try {
-            await axios.post("http://localhost:8080/api/auth/login", {
+            const response = await axios.post("http://localhost:8080/api/auth/login", {
                 email,
                 password
             })
+            console.log(response.data)
             navigate("/")
+            return Swal.fire({
+                title: "Sucess!",
+                text: "Login efetuado com sucesso",
+                icon: "success"
+            })
         
         } catch (error: any) {
-            alert(error.message)
+            return Swal.fire({
+                title: "Error",
+                text: "Email ou Senha invalidos",
+                icon: "error"
+            })
         }
     }
 
