@@ -17,6 +17,9 @@ export const Login = () => {
                 email,
                 password
             })
+
+            sessionStorage.setItem('token', response.data.token)
+            
             console.log(response.data)
             navigate("/")
             return Swal.fire({
