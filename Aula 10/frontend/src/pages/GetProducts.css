@@ -1,18 +1,42 @@
+.nav{
+  width: 100%;
+  height: 8rem;
+  background-color: rgb(148, 127, 89);
+  box-shadow: 8px 8px 3px 0px rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 .card{
+  display: flex;
+  flex-direction: column;
   width: fit-content;
-  height: fit-content;
-  padding: 5px;
-  gap: 50px;
+  height: 15rem;
+  padding: .8rem;
+  gap: 10px;
   border-radius: 10px;
   background-color: rgb(221, 205, 151);
 }
+.container-buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+h1{
+  color: white;
+}
 .container-card{
-  width: 80em;
-  height: fit-content;
-  margin: 1rem;
+  width: 100%;
+  padding: 3rem;
+  height: 40rem;
   display: flex;
   flex-direction: row;
   gap: 20px;
+  position: fixed;
+  top: 8rem;
 }
 
 .input{
@@ -42,12 +66,13 @@
 .delete-button{
   background-color: rgb(255, 73, 73);
   border-radius: 10px;
-  width: 100px;
-  height: 30px;
+  width: fit-content;
+  height: fit-content;
+  justify-content: end;
   padding: 1px;
 }
 
-.update-button{
+._update-button{
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   width: fit-content;
@@ -56,10 +81,21 @@
   padding: 1px;
 }
 
+.new-product-button{
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  width: fit-content;
+  height: fit-content;
+  justify-content: end;
+  padding: .5rem;
+  margin-bottom: 2rem;
+}
 #root {
   width: 100%;
-  height: 100em;
-  margin: 0 auto;
-  text-align: center;
+  height: 100vh;
+  margin: 0;
   background-color: rgb(170, 151, 115);
+  display: flex;
+  align-items: end;
+  justify-content: center;
 }

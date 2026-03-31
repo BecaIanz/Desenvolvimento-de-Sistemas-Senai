@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import axios from 'axios'
-import './GetProducts.css'
+import './CreateProduct.css'
 
 export const CreateProduct = () => {
     const [name, setName] = useState("")
@@ -31,36 +31,40 @@ export const CreateProduct = () => {
 
     return(
         <>
+            <div className="nav">
+                <h1>Cadastro de Produto</h1>
+            </div>
+
             <div className='container-inputs'>
                 <div className='container-input'>
-                <p>Nome: </p>
-                <input className='input' onChange={(e) => setName(e.target.value)}></input>
+                    <p>Nome: </p>
+                    <input className='input' onChange={(e) => setName(e.target.value)}></input>
                 </div>
             
                 <div className='container-input'>
-                <p>Descrição: </p>
-                <input className='input' onChange={(e) => setDescription(e.target.value)}></input>
+                    <p>Descrição: </p>
+                    <input className='input' onChange={(e) => setDescription(e.target.value)}></input>
                 </div>
             
                 <div className='container-input'>
-                <p>Categoria</p>
-                <input className='input' onChange={(e) => setCategory(e.target.value)}></input>
+                    <p>Categoria</p>
+                    <input className='input' onChange={(e) => setCategory(e.target.value)}></input>
                 </div>
                 
                 <div className='container-input'>
-                <p>Estoque</p>
-                <input className='input' type='number' onChange={(e) => setStock(Number(e.target.value))}></input>
+                    <p>Estoque</p>
+                    <input className='input' type='number' onChange={(e) => setStock(Number(e.target.value))}></input>
                 </div>
                 
                 <div className='container-input'>
-                <p>Preço</p>
-                <input className='input' type='number' onChange={(e) => setPrice(Number(e.target.value))}></input>
+                    <p>Preço</p>
+                    <input className='input' type='number' onChange={(e) => setPrice(Number(e.target.value))}></input>
                 </div>
             </div>
 
             
             
-            <button onClick={() => createProduct()}>Criar</button>
+            <button className='create-button' onClick={() => createProduct()}>Criar</button>
         </>
     )
 }

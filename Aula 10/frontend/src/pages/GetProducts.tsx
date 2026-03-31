@@ -29,6 +29,10 @@ export const GetProducts = () => {
 
     return(
         <>
+            <div className="nav">
+                <h1>PRODUTOS</h1>
+            </div>
+
             <div className='container-card'>
                 {products.map((product: any) => (
                     <div key={product.id}>
@@ -38,14 +42,16 @@ export const GetProducts = () => {
                         <p>Categoria: {product.category}</p>
                         <p>Quantidade em Estoque: {product.stock}</p>
                         <p>Preço: R${product.price}</p>
-                        <button className='delete-button' onClick={() => deleteProduct(product._id)}>Deletar</button>
-                        <button className='update-button' onClick={() => navigate(`/update/${product._id}`)}>Editar</button>
+                        <div className="container-buttons">
+                            <button className='delete-button' onClick={() => deleteProduct(product._id)}>Deletar</button>
+                            <button className='_update-button' onClick={() => navigate(`/update/${product._id}`)}>Editar</button>
+                        </div>
                     </div>
                 </div>
                 ))}
             </div>
             
-            <button className='update-button' onClick={() => navigate(`/create`)}>Novo Produto</button>
+            <button className='new-product-button' onClick={() => navigate(`/create`)}>Novo Produto</button>
         </>
     )
 }

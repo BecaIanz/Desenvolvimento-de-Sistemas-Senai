@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import axios from 'axios'
-import './GetProducts.css'
+import './UpdateProduct.css'
 
 export const UpdateProduct = () => {
     const { id } = useParams<{ id: string }>();
@@ -35,36 +35,38 @@ export const UpdateProduct = () => {
 
     return(
         <>
-            <div className='container-inputs'>
-                <div className='container-input'>
-                <p>Nome: </p>
-                <input className='input' onChange={(e) => setName(e.target.value)}></input>
-                </div>
-            
-                <div className='container-input'>
-                <p>Descrição: </p>
-                <input className='input' onChange={(e) => setDescription(e.target.value)}></input>
-                </div>
-            
-                <div className='container-input'>
-                <p>Categoria</p>
-                <input className='input' onChange={(e) => setCategory(e.target.value)}></input>
-                </div>
-                
-                <div className='container-input'>
-                <p>Estoque</p>
-                <input className='input' type='number' onChange={(e) => setStock(Number(e.target.value))}></input>
-                </div>
-                
-                <div className='container-input'>
-                <p>Preço</p>
-                <input className='input' type='number' onChange={(e) => setPrice(Number(e.target.value))}></input>
-                </div>
+            <div className="nav">
+                <h1>Editar Produto</h1>
             </div>
 
+            <div className='container-inputs'>
+                <div className='container-input'>
+                    <p>Nome: </p>
+                    <input className='input' onChange={(e) => setName(e.target.value)}></input>
+                </div>
             
+                <div className='container-input'>
+                    <p>Descrição: </p>
+                    <input className='input' onChange={(e) => setDescription(e.target.value)}></input>
+                </div>
             
-            <button onClick={() => handleUpdate(id)}>Editar Produto</button>
+                <div className='container-input'>
+                    <p>Categoria: </p>
+                    <input className='input' onChange={(e) => setCategory(e.target.value)}></input>
+                </div>
+                
+                <div className='container-input'>
+                    <p>Estoque: </p>
+                    <input className='input' type='number' onChange={(e) => setStock(Number(e.target.value))}></input>
+                </div>
+                
+                <div className='container-input'>
+                    <p>Preço: </p>
+                    <input className='input' type='number' onChange={(e) => setPrice(Number(e.target.value))}></input>
+                </div>
+            </div>            
+            
+            <button className='update-button' onClick={() => handleUpdate(id)}>Editar Produto</button>
         </>
     )
 }
