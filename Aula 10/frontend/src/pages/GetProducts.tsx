@@ -15,11 +15,11 @@ export const GetProducts = () => {
 
     const deleteProduct = async (id: string) => {
         try {
-        await axios.delete(`http://localhost:8080/api/products/remove/${id}`)
+            await axios.delete(`http://localhost:8080/api/products/remove/${id}`)
 
-        fetchData()
+            fetchData()
         } catch (error) {
-        console.error(error)
+            console.error(error)
         }
     }
 

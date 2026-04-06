@@ -30,7 +30,7 @@ export const RegisterUser = () => {
         } catch (error) {
             Swal.fire({
                 title: "Error",
-                text: "Não foi possivel registrar o usuario",
+                text: "Não foi possivel registrar o usuario: " + error,
                 icon: 'error'
             })
         }
@@ -58,6 +58,8 @@ export const RegisterUser = () => {
                         <input onChange={(e) => setConfirmPassword(e.target.value)} type='password' className='input'></input>
                     </div>
                 </div>
+                
+                <Link to="/login">Login</Link>
                 <button onClick={() => {
 
                     if(password == confirmPassword){

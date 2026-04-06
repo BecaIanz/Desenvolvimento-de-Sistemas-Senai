@@ -51,6 +51,7 @@ export const Login = () => {
                         <input onChange={(e) => setPassword(e.target.value)} type='password' className='input'></input>
                     </div>
                 </div>
+                <Link to="/register">Registrar</Link>
                 <button onClick={() => login()}>Entrar</button>
             </div>
 
