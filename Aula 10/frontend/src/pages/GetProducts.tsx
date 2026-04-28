@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './GetProducts.css'
+import Swal from "sweetalert2";
 
 export const GetProducts = () => {
     const [products, setProducts] = useState<any[]>([])
@@ -14,13 +15,24 @@ export const GetProducts = () => {
     }
 
     const deleteProduct = async (id: string) => {
-        try {
-            await axios.delete(`http://localhost:8080/api/products/remove/${id}`)
-
-            fetchData()
-        } catch (error) {
-            console.error(error)
-        }
+        Swal.fire({
+            title: "Deseja realmente deletar?",
+            showConfirmButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Confirmar",
+            cancelButtonText: "Cancelar"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try{
+                    await axios.delete(`http://localhost:8080/api/products/remove/${id}`)
+                    Swal.fire("Deletado com sucesso", "", "success");
+                    fetchData()
+                }
+                catch{
+                    Swal.fire("Erro!", "", "error");
+                }
+            }
+        });
     }
 
     useEffect(() => {

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import axios from 'axios'
 import './UpdateProduct.css'
+import Swal from 'sweetalert2';
 
 export const UpdateProduct = () => {
     const { id } = useParams<{ id: string }>();
@@ -24,20 +25,32 @@ export const UpdateProduct = () => {
     }
 
     const handleUpdate = async (id: string) => {
-        try {
-            await axios.put(`http://localhost:8080/api/products/update/${id}`, {
-            name,
-            description,
-            category,
-            stock,
-            price
-            });
-
-            navigate(`/`)
-
-        } catch (error) {
-            console.error(error);
-        }
+         Swal.fire({
+            title: "Confirmar atualização?",
+            showConfirmButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Confirmar",
+            cancelButtonText: "Cancelar"
+        }).then( async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await axios.put(`http://localhost:8080/api/products/update/${id}`, {
+                        name,
+                        description,
+                        category,
+                        stock,
+                        price
+                    })
+                    
+                    Swal.fire("Atualizado com sucesso ", "", "success");
+                    navigate("/")
+                    
+                } catch (error) {
+                    Swal.fire("Error", "", "error");
+                    
+                }
+            }
+        });
     };
 
     useEffect(() => {
